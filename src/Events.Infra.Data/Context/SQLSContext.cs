@@ -27,6 +27,7 @@ namespace Events.Infra.Data.Context
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Venda> Vendas { get; set; }
         public DbSet<Venda_Produto> Venda_Produtos { get; set; }
+        public DbSet<Cor> Cores { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -43,6 +44,7 @@ namespace Events.Infra.Data.Context
             modelBuilder.AddConfiguration(new ProdutoMap());
             modelBuilder.AddConfiguration(new VendaMap());
             modelBuilder.AddConfiguration(new Venda_ProdutoMap());
+            modelBuilder.AddConfiguration(new CorMap());
 
             base.OnModelCreating(modelBuilder);
         }

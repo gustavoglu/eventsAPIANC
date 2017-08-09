@@ -16,6 +16,8 @@ namespace Events.Domain.Models
 
         public double Valor { get; set; }
 
+        public double SaldoAnterior{ get; set; }
+
         public virtual Ficha Ficha { get; set; }
 
         public virtual Pagamento Pagamento { get; set; }

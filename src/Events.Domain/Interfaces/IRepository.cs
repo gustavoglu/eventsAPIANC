@@ -5,11 +5,11 @@ using System.Linq.Expressions;
 
 namespace Events.Domain.Interfaces
 {
-    public interface IRepository<T> where T : Entity
+    public interface IRepository<T> : IDisposable where T : Entity
     {
-        T Criar(T entity);
+        void Criar(T entity);
 
-        T Atualizar(T entity);
+        void Atualizar(T entity);
 
         T TrazerPorId(Guid id);
 

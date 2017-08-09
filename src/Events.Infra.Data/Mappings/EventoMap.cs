@@ -14,6 +14,11 @@ namespace Events.Infra.Data.Mappings
                 .WithMany(o => o.Eventos)
                 .HasForeignKey(e => e.Id_organizador)
                 .IsRequired();
+
+            evento.HasMany(e => e.Contratos)
+                .WithOne(c => c.Evento)
+                .HasForeignKey(c => c.Id_evento);
+
         }
     }
 }

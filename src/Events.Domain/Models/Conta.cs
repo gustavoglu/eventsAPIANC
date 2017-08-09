@@ -21,6 +21,8 @@ namespace Events.Domain.Models
 
         public string RazaoSocial { get; set; }
 
+        public Guid Id_Conta_Principal { get; set; }
+
         public virtual Endereco Endereco { get; set; }
 
         public virtual Contato Contato { get; set; }
@@ -31,12 +33,12 @@ namespace Events.Domain.Models
 
         public virtual ICollection<Produto> Produtos { get; set; }
 
-        public virtual ICollection<Contrato>  Organizador_Contratos { get; set; }
+        public virtual ICollection<Contrato> Organizador_Contratos { get; set; }
 
         public virtual ICollection<Contrato> Loja_Contratos { get; set; }
 
         public virtual ICollection<Conta_Funcionario> Conta_Funcionarios { get; set; }
 
-        public virtual ICollection<Conta_Funcionario> Conta_Lojas { get; set; }
+        public virtual Conta_Funcionario Conta_Principal { get; set; }
     }
 }

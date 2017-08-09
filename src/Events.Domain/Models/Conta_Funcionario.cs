@@ -17,6 +17,7 @@ namespace Events.Domain.Models
 
         public bool Ativo { get; set; }
 
+
         public virtual Conta Funcionario  { get; set; }
 
         public virtual Conta Conta  { get; set; }

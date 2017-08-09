@@ -24,7 +24,6 @@ namespace Events.Infra.Data.Mappings
                 .WithMany(e => e.Contratos)
                 .HasForeignKey(c => c.Id_evento)
                 .IsRequired();
-
         }
     }
 }

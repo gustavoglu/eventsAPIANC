@@ -16,10 +16,9 @@ namespace Events.Infra.Data.Mappings
                 .IsRequired();
 
             conta_funcionario.HasOne(cf => cf.Conta)
-                .WithMany(f => f.Conta_Lojas)
-                .HasForeignKey(cf => cf.Id_conta)
+                .WithOne(f => f.Conta_Principal)
+                .HasForeignKey<Conta>(cf => cf.Id_Conta_Principal)
                 .IsRequired();
-
         }
     }
 }
