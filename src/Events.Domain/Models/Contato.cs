@@ -11,5 +11,7 @@ namespace Events.Domain.Models
         public string Telefone { get; set; }
 
         public string Telefone2 { get; set; }
+
+        public virtual Conta Conta  { get; set; }
     }
 }

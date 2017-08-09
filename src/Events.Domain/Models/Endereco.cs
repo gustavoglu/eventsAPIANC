@@ -13,5 +13,7 @@ namespace Events.Domain.Models
         public string Estado { get; set; }
 
         public string Pais { get; set; }
+
+        public virtual Conta Conta { get; set; }
     }
 }

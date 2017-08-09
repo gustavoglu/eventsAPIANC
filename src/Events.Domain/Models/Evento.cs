@@ -20,5 +20,7 @@ namespace Events.Domain.Models
 
         public virtual ICollection<Venda> Vendas { get; set; }
 
+        public virtual ICollection<Contrato> Contratos  { get; set; }
+
     }
 }

@@ -31,5 +31,12 @@ namespace Events.Domain.Models
 
         public virtual ICollection<Produto> Produtos { get; set; }
 
+        public virtual ICollection<Contrato>  Organizador_Contratos { get; set; }
+
+        public virtual ICollection<Contrato> Loja_Contratos { get; set; }
+
+        public virtual ICollection<Conta_Funcionario> Conta_Funcionarios { get; set; }
+
+        public virtual ICollection<Conta_Funcionario> Conta_Lojas { get; set; }
     }
 }

@@ -18,6 +18,8 @@ namespace Events.Domain.Models
 
         public virtual ICollection<Venda_Produto> Venda_Produtos { get; set; }
 
+        public virtual ICollection<Pagamento> Pagamentos { get; set; }
+
         public virtual Evento Evento { get; set; }
 
         public virtual Conta Conta { get; set; }
