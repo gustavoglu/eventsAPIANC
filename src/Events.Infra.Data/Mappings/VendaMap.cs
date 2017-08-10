@@ -20,6 +20,7 @@ namespace Events.Infra.Data.Mappings
                 .HasForeignKey(v => v.Id_loja)
                 .IsRequired();
 
+            
         }
     }
 }

@@ -13,7 +13,8 @@ namespace Events.Infra.Data.Mappings
 
             venda_produto.HasOne(vp => vp.Venda)
                 .WithMany(v => v.Venda_Produtos)
-                .HasForeignKey(vp => vp.Id_venda);
+                .HasForeignKey(vp => vp.Id_venda)
+                .OnDelete( Microsoft.EntityFrameworkCore.Metadata.DeleteBehavior.Restrict);
 
             venda_produto.HasOne(vp => vp.Produto)
                 .WithMany(p => p.Venda_Produtos)

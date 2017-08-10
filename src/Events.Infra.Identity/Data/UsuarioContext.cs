@@ -1,26 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Events.Site.Models;
+using Microsoft.Extensions.Configuration;
+using System.IO;
+using Events.Infra.Identity.Models;
+using Events.Domain.Models;
 
 namespace Events.Infra.Identity.Data
 {
     public class UsuarioContext : IdentityDbContext<Usuario>
     {
-        public UsuarioContext(DbContextOptions<UsuarioContext> options)
-            : base(options)
-        {
-        }
-
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            // Customize the ASP.NET Identity model and override the defaults if needed.
-            // For example, you can rename the ASP.NET Identity table names and more.
-            // Add your customizations after calling base.OnModelCreating(builder);
+
+            builder.Entity<Usuario>().ToTable("Usuario");
+            builder.Entity<IdentityRole>().ToTable("Regra");
+            builder.Entity<IdentityUserRole<string>>().ToTable("Usuario_Regra");
+            builder.Entity<IdentityUserClaim<string>>().ToTable("Usuario_Claim");
+            builder.Entity<IdentityUserLogin<string>>().ToTable("Usuario_Login");
+            builder.Entity<IdentityRoleClaim<string>>().ToTable("Regra_Claim");
+            builder.Entity<IdentityUserToken<string>>().ToTable("Usuario_Tokens");
+
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            var config = new ConfigurationBuilder()
+                 .SetBasePath(Directory.GetCurrentDirectory())
+                 .AddJsonFile("appsettings.json")
+                 .Build();
+
+            optionsBuilder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
         }
     }
 }

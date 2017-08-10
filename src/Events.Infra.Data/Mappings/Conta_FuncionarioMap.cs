@@ -13,7 +13,8 @@ namespace Events.Infra.Data.Mappings
             conta_funcionario.HasOne(cf => cf.Funcionario)
                 .WithMany(f => f.Conta_Funcionarios)
                 .HasForeignKey(cf => cf.Id_funcionario)
-                .IsRequired();
+                .IsRequired()
+                .OnDelete(Microsoft.EntityFrameworkCore.Metadata.DeleteBehavior.Restrict);
 
             conta_funcionario.HasOne(cf => cf.Conta)
                 .WithOne(f => f.Conta_Principal)

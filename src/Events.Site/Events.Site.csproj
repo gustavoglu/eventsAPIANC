@@ -34,7 +34,7 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Events.Infra.Data\Events.Infra.Data.csproj" />
+    <ProjectReference Include="..\Events.Infra.Identity\Events.Infra.Identity.csproj" />
   </ItemGroup>
 
 </Project>

@@ -31,6 +31,8 @@ namespace Events.Infra.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.AddConfiguration(new ContaMap());
             modelBuilder.AddConfiguration(new Conta_FuncionarioMap());
             modelBuilder.AddConfiguration(new ContatoMap());
@@ -45,8 +47,6 @@ namespace Events.Infra.Data.Context
             modelBuilder.AddConfiguration(new VendaMap());
             modelBuilder.AddConfiguration(new Venda_ProdutoMap());
             modelBuilder.AddConfiguration(new CorMap());
-
-            base.OnModelCreating(modelBuilder);
         }
 
         public override int SaveChanges()

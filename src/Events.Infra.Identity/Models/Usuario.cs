@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Events.Domain.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-namespace Events.Site.Models
+namespace Events.Infra.Identity.Models
 {
-    // Add profile data for application users by adding properties to the ApplicationUser class
     public class Usuario : IdentityUser
     {
     }
 }
+
